@@ -1,9 +1,12 @@
+@import '../../sass/styles';
+
 .container{
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   width: 100%;
+  margin-top: 50px;
 }
 
 .listaFilmes{
@@ -21,15 +24,15 @@
 
 .listaFilmes strong{
   color: white;
-  font-size: 30px;
+  font-size: 27px;
   text-shadow: 1px 1px 5px #000;
   position: absolute;
-  left: 350px;
-  margin-top: 80px;
+  left: 420px;
+  margin-top: 50px;
 }
 
 .listaFilmes img{
-  width: 100%;
+  width: 80%;
   max-height: 350px;
   border-radius: 10px;
   box-shadow: 5px 10px 5px #22232e;
@@ -42,12 +45,13 @@
   font-size: 25px;
   width: 20%;
   margin-top: 10px;
-  margin-right: 77%;
+  margin-right: 57%;
   text-align: center;
   border-radius: 5px;
   box-shadow: 3px 3px 3px #22232e;
-  padding: 2px;
+  padding: 1px;
 }
 .listaFilmes article a:hover{
   background-color: #ff79c6;
+  transition: all 0.4s;
 }

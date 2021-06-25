@@ -1,0 +1,54 @@
+.filmeInfo{
+  display: flex;
+  flex-direction: column;
+  max-width: 900px;
+  margin-top: 50px;
+  margin-left: 11%;
+}
+
+.filmeInfo img{
+  width: 80%;
+  border-radius: 10px;
+  box-shadow: 5px 10px 5px #22232e;
+  margin-top: -13px;
+}
+
+.filmeInfo button{
+  margin-right: 20px;
+  margin-top: 12px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 0;
+  font-size: 18px;
+  outline: none;
+  padding: 8px;
+  background-color: #bd93f9;
+  color: #f2f2f2
+}
+.filmeInfo button:hover{
+  transition: all 0.4s;
+  background-color: #ff79c6;
+}
+
+.filmeInfo p{
+  margin-top: -15px;
+  color: #f2f2f2;
+  width: 80%;
+}
+
+.filmeInfo h3{
+  color: #f2f2f2;
+}
+
+.nomeFilme{
+  color: #bd93f9;
+}
+
+.filmeInfo a{
+  text-decoration: none;
+  color: #f2f2f2;
+}
+.filmeInfo a:hover{
+  transition: all 0.4s;
+  background-color: #ff79c6;
+}

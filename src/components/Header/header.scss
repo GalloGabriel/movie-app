@@ -1,49 +1,15 @@
-$colorHeader: #221c2e;
-$greenColor: #228a64;
-$whiteColor: #f2f2f2;
+@import '../../sass/styles';
+@import '../../sass/variables';
 
-@mixin headerStyle() {
-  display: flex;
-  align-items: center;
-  justify-content: space-around; //um item de cada lado;
-  width: 100%;
-  height: 60px;
-  background-color: $colorHeader;
-}
-
-@mixin logoStyle {
-  text-decoration: none;
-  font-size: 30px;
-  color: $whiteColor;
-  cursor: pointer;
-}
-
-@mixin favoritoStyle {
-  cursor: pointer;
-  text-decoration: none;
-  background-color: $whiteColor;
-  border-radius: 5px;
-  color: $colorHeader;
-  padding: 5px;
-  font-weight: bold;
-  &:hover{
-    background-color: $greenColor;
-    transition: ease-in-out 0.2s;
-    color: $whiteColor;
-  }
-}
-
-
-//Includes
 
 header{
-  @include headerStyle();
+  @include headerStyle;
 }
 
 .logo{
-  @include logoStyle();
+  @include logoStyle;
 }
 
 .favoritos{
-  @include favoritoStyle();
+  @include favoritoStyle;
 }

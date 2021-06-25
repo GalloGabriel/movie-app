@@ -1,0 +1,52 @@
+//Media Querys
+
+@mixin mobile {
+  @media (min-width: 320px) and (max-width: 480px) {@content;}
+}
+
+@mixin tablet {
+  @media (min-width: 768px) and (max-width: 1024px) {@content;}
+}
+//------------------//----------------//-------------------//-----------//
+
+
+
+//--- HEADER STYLE ----//-------//
+@mixin headerStyle {
+  display: flex;
+  align-items: center;
+  justify-content: space-around; //um item de cada lado;
+  width: 100%;
+  height: 60px;
+  background-color: $colorHeader;
+  position: fixed;
+  top: 0px;
+  z-index: 10;
+}
+
+@mixin logoStyle {
+  text-decoration: none;
+  font-size: 30px;
+  color: $whiteColor;
+  cursor: pointer;
+  letter-spacing: 3px;
+  &:hover{
+    color: $greenColor;
+  }
+}
+
+@mixin favoritoStyle {
+  cursor: pointer;
+  text-decoration: none;
+  background-color: $whiteColor;
+  border-radius: 5px;
+  color: $colorHeader;
+  padding: 5px;
+  font-weight: bold;
+  &:hover{
+    background-color: $greenColor;
+    transition: ease-in-out 0.2s;
+    color: $whiteColor;
+  }
+}
+//--- HEADER STYLE ----//-------//-----//

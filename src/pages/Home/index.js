@@ -26,8 +26,8 @@ export default function Home() {
            return(
              <article key={filme.id}>
                 <strong> {filme.nome} </strong>
-                <img src={filme.foto} alt={filme.nome}/>
-                <Link to="/">Acessar</Link>
+                <img src={filme.foto} alt={`Capa do filme ${filme.nome}`}/>
+                <Link to={`/filme/${filme.id}`}>Acessar</Link>
              </article>
            )
          })}
