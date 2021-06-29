@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './favoritos.scss';
+import { toast } from 'react-toastify';
 
 export default function Favoritos(){
 
@@ -13,9 +14,26 @@ export default function Favoritos(){
 
   }, []);
 
+  function handleDelete(id){
+
+    //filtrando nosso array e retornando todos os itens menos o clicado
+    let filtroFilmes = filmes.filter((item)=>{
+      return (item.id !== id)
+    })
+
+    //salvando os filmes na pagina sem o filme deletado
+    setFilmes(filtroFilmes);
+    localStorage.setItem('filmes', JSON.stringify(filtroFilmes))
+    toast.success('Filme excluído com sucesso!');
+
+  }
+
   return(
     <div id="meus-filmes">
       <h1>Meus Filmes</h1>
+
+      {filmes.length === 0 && 
+      <span className="zeroFilmes">Você ainda não possui nenhum filme salvo :(</span> }
 
       <ul>
         {filmes.map((item)=>{
@@ -26,7 +44,7 @@ export default function Favoritos(){
 
               <div>
                 <Link to={`/filme/${item.id}`}>Ver Detalhes</Link>
-                <button onClick={()=>{}}>Remover</button>
+                <button onClick={ () => handleDelete(item.id) }>Remover</button>
               </div>
             </li>
           )

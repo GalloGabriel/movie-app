@@ -1,0 +1,30 @@
+.not-found{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-error{
+  margin-top: 150px;
+  color: #fff;
+}
+
+.back-home{
+  margin-right: 20px;
+  margin-top: 12px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 0;
+  font-size: 18px;
+  outline: none;
+  padding: 8px;
+  background-color: #bd93f9;
+  color: #f2f2f2;
+  text-decoration: none;
+  text-align: center;
+}
+.back-home:hover{
+  transition: all 0.4s;
+  background-color: #ff79c6;
+}
