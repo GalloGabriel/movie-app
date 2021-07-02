@@ -1,3 +1,5 @@
+@import '../../sass/styles';
+
 #meus-filmes{
   display: flex;
   flex-direction: column;
@@ -76,4 +78,57 @@ button:hover{
   color: #fff;
   font-size: 20px;
   margin-top: 20px;
+}
+
+
+@include mobile{
+  .poster{
+    width: 120%;
+    border-radius: 5px;
+    box-shadow: 5px 7px 5px #22232e;
+    margin-left: -28%;
+  }
+
+  .title{
+    font-size: 18px;
+    color: #f8f8f2;
+    text-shadow: 1px 1px 5px #000;
+    font-weight: bold;
+    position: absolute;
+    margin-top: 30%;
+    margin-left: -16%;
+  }
+
+  button{
+    text-decoration: none;
+    color: #fff;
+    background-color: #ff5555;
+    font-size: 14px;
+    width: 25%;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 10px;
+    border-radius: 3px;
+    box-shadow: 3px 3px 3px #22232e;
+    padding: 2px;
+    border: 1px solid transparent;
+  }
+
+  #meus-filmes a{
+    text-decoration: none;
+    color: #fff;
+    background-color: #bd93f9;
+    font-size: 14px;
+    width: 20%;
+    text-align: center;
+    margin-top: 10px;
+    border-radius: 2px;
+    box-shadow: 3px 3px 3px #22232e;
+    padding: 2px;
+    border: 1px solid transparent;
+  }
+
+  .botoes{
+    margin-left: -27%;
+  }
 }

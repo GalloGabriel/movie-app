@@ -42,7 +42,7 @@ export default function Favoritos(){
               <span className="title">{item.nome}</span><br/>
               <img className="poster" src={item.foto} alt={item.nome}/>
 
-              <div>
+              <div className="botoes">
                 <Link to={`/filme/${item.id}`}>Ver Detalhes</Link>
                 <button onClick={ () => handleDelete(item.id) }>Remover</button>
               </div>

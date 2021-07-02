@@ -55,3 +55,35 @@
   background-color: #ff79c6;
   transition: all 0.4s;
 }
+
+@include mobile{
+  .listaFilmes strong{
+    color: white;
+    font-size: 17px;
+    text-shadow: 1px 1px 5px #000;
+    position: absolute;
+    left: 25px;
+    margin-top: 30px;
+  }
+
+  .listaFilmes img{
+    width: 130%;
+    max-height: 350px;
+    border-radius: 10px;
+    box-shadow: 3px 6px 3px #22232e;
+  }
+
+  .listaFilmes article a{
+    text-decoration: none;
+    color: #fff;
+    background-color: #bd93f9;
+    font-size: 15px;
+    width: 22%;
+    margin-top: 10px;
+    margin-right: 100%;
+    text-align: center;
+    border-radius: 3px;
+    box-shadow: 3px 3px 3px #22232e;
+    padding: 3px;
+  }
+}

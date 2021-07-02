@@ -1,3 +1,5 @@
+@import '../../sass/styles';
+
 .filmeInfo{
   display: flex;
   flex-direction: column;
@@ -51,4 +53,31 @@
 .filmeInfo a:hover{
   transition: all 0.4s;
   background-color: #ff79c6;
+}
+
+
+@include mobile{
+  .filmeInfo img{
+    width: 90%;
+    border-radius: 10px;
+    box-shadow: 3px 7px 3px #22232e;
+    margin-top: -13px;
+  }
+
+  .nomeFilme{
+    font-size: 25px;
+  }
+
+  .filmeInfo button{
+    margin-right: 20px;
+    margin-top: 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 0;
+    font-size: 14px;
+    outline: none;
+    padding: 8px;
+    background-color: #bd93f9;
+    color: #f2f2f2
+  }
 }
