@@ -23,67 +23,28 @@
 }
 
 .listaFilmes strong{
-  color: white;
-  font-size: 27px;
-  text-shadow: 1px 1px 5px #000;
-  position: absolute;
-  left: 420px;
-  margin-top: 50px;
+  @include title($whiteColor, 27px, 420px, 50px);
 }
 
 .listaFilmes img{
-  width: 80%;
-  max-height: 350px;
-  border-radius: 10px;
-  box-shadow: 5px 10px 5px #22232e;
+  @include movieImage(80%, 5px 10px 5px $shadowColor);
 }
 
 .listaFilmes article a{
-  text-decoration: none;
-  color: #fff;
-  background-color: #bd93f9;
-  font-size: 25px;
-  width: 20%;
-  margin-top: 10px;
-  margin-right: 57%;
-  text-align: center;
-  border-radius: 5px;
-  box-shadow: 3px 3px 3px #22232e;
-  padding: 1px;
-}
-.listaFilmes article a:hover{
-  background-color: #ff79c6;
-  transition: all 0.4s;
+  @include buttonStyle(25px, 20%, 10px 57% 0 0, 5px, 1px);
 }
 
+// MOBILE
 @include mobile{
   .listaFilmes strong{
-    color: white;
-    font-size: 17px;
-    text-shadow: 1px 1px 5px #000;
-    position: absolute;
-    left: 25px;
-    margin-top: 30px;
+    @include title($whiteColor, 17px, 25px, 30px);
   }
 
   .listaFilmes img{
-    width: 130%;
-    max-height: 350px;
-    border-radius: 10px;
-    box-shadow: 3px 6px 3px #22232e;
+    @include movieImage(130%, 3px 6px 3px $shadowColor);
   }
 
   .listaFilmes article a{
-    text-decoration: none;
-    color: #fff;
-    background-color: #bd93f9;
-    font-size: 15px;
-    width: 27%;
-    margin-top: 10px;
-    margin-right: 100%;
-    text-align: center;
-    border-radius: 3px;
-    box-shadow: 3px 3px 3px #22232e;
-    padding: 3px;
+    @include buttonStyle(15px, 27%, 10px 100% 0 0, 3px, 3px);
   }
 }

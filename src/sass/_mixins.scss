@@ -50,3 +50,36 @@
   }
 }
 //--- HEADER STYLE ----//-------//-----//
+
+@mixin title($colorTitle, $fontSize, $leftTitle, $marginTop) {
+  color: $colorTitle;
+  font-size: $fontSize;
+  text-shadow: 1px 1px 5px #000;
+  position: absolute;
+  left: $leftTitle;
+  margin-top: $marginTop;
+}
+
+@mixin movieImage($widthImg, $shadowImg) {
+  width: $widthImg;
+  max-height: 350px;
+  border-radius: 10px;
+  box-shadow: $shadowImg;
+}
+
+@mixin buttonStyle($fontSize, $widthButton, $marginButton, $radiusButton, $paddingButton) {
+  text-decoration: none;
+  color: $whiteColor;
+  background-color: $purpleColor;
+  font-size: $fontSize;
+  width: $widthButton;
+  margin: $marginButton;
+  text-align: center;
+  border-radius: $radiusButton;
+  box-shadow: 3px 3px 3px $shadowColor;
+  padding: $paddingButton;
+  &:hover{
+    background-color: $pinkColor;
+    transition: all 0.4s;
+  }
+}
