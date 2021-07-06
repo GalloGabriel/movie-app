@@ -9,28 +9,17 @@
 }
 
 .filmeInfo img{
-  width: 80%;
-  border-radius: 10px;
-  box-shadow: 5px 10px 5px #22232e;
+  @include movieImage(80%, 5px 10px 5px $shadowColor);
   margin-top: -13px;
 }
 
 .filmeInfo button{
-  margin-right: 20px;
-  margin-top: 12px;
+  @include buttonStyle(19px, none, 12px 20px 0 0, 5px, 8px);
   cursor: pointer;
-  border-radius: 5px;
   border: 0;
-  font-size: 18px;
   outline: none;
-  padding: 8px;
-  background-color: #bd93f9;
-  color: #f2f2f2
 }
-.filmeInfo button:hover{
-  transition: all 0.4s;
-  background-color: #ff79c6;
-}
+
 
 .filmeInfo p{
   margin-top: -15px;
@@ -56,11 +45,10 @@
 }
 
 
+//MOBILE
 @include mobile{
   .filmeInfo img{
-    width: 90%;
-    border-radius: 10px;
-    box-shadow: 3px 7px 3px #22232e;
+    @include movieImage(90%, 3px 7px 3px $shadowColor);
     margin-top: -13px;
   }
 
@@ -69,15 +57,9 @@
   }
 
   .filmeInfo button{
-    margin-right: 20px;
-    margin-top: 12px;
+    @include buttonStyle(14px, none, 12px 20px 0 0, 5px, 8px);
     cursor: pointer;
-    border-radius: 5px;
     border: 0;
-    font-size: 14px;
     outline: none;
-    padding: 8px;
-    background-color: #bd93f9;
-    color: #f2f2f2
   }
 }
