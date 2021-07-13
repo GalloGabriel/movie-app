@@ -44,6 +44,160 @@
   background-color: #ff79c6;
 }
 
+//Modal Style
+.modal{
+  display: none;
+  width: 750px;
+  height: 490px;
+  background-color: $backgroundColor;
+  position: absolute;
+  top: 2%;
+  margin-left: -30px;
+  border-radius: 10px;
+  box-shadow: -2px 1px 15px 10px #1a1b24;
+  z-index: 10;
+}
+
+.modal label, .valueRange{
+  color: $purpleColor;
+  font-weight: bold;
+}
+
+.close{
+  float: right;
+  font-size: 30px;
+  color: $purpleColor;
+  margin-right: 12px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.close:hover{
+  color: $pinkColor;
+}
+
+.modal h1{
+  margin-left: 30%;
+  margin-top: 1%;
+}
+label, select, input, textarea{
+  margin-left: 30%;
+}
+
+.valueRange{
+  margin-left: 2%;
+  position: absolute;
+  font-size: 23px;
+  margin-top: -10px;
+}
+
+textarea{
+  width: 320px;
+  outline: none;
+  border-radius: 5px;
+  background-color: $shadowColor;
+  color: $whiteColor;
+  border: none;
+}
+::placeholder{
+  color: $whiteColor;
+  font-weight: lighter;
+  font-style: italic;
+}
+
+select{
+  padding: 6px;
+  width: 220px;
+  outline: none;
+  background-color: #6272a4;
+  color: $whiteColor;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+}
+
+.indica{
+  margin-left: 30%;
+  color: $purpleColor;
+}
+
+.btnModal{
+  position: relative;
+  left: 32%;
+  top: -5px;
+}
+
+.thumbs:nth-child(1n){
+  position: relative;
+  left: 34%;
+  top: 6px;
+  width: 35px;
+  height: 35px;
+  display: inline-block;
+  border-radius: 50%;
+  border: 2px solid $greenColor;
+}
+.thumbs:nth-child(1n):hover{
+  background-color: $greenColor;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+
+.thumbs:nth-child(2n){
+  position: relative;
+  left: 37%;
+  border: 2px solid $redColor;
+}
+.thumbs:nth-child(2n):hover{
+  background-color: $redColor;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+
+#thumbIn01, #thumbIn02{
+  position: relative;
+  left: 29%;
+  top: 8px;
+}
+
+input[type='range'] {
+  cursor: pointer;
+  outline: none;
+}
+
+input[type='range'],
+input[type='range']::-webkit-slider-runnable-track,
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+/** 
+ * Use o pseudo-seletor "::-webkit-slider-runnable-track" para customizar o "trilho" do campo.
+ */
+input[type='range']::-webkit-slider-runnable-track {
+  width: 200px;
+  height: 10px;
+  background: #1a86c8;
+}
+
+/** 
+ * Use o pseudo-seletor "::-webkit-slider-thumb" para customizar o "seletor" do campo.
+ */
+input[type='range']::-webkit-slider-thumb {
+  width: 20px;
+  height: 20px;
+  margin-top: -4.5px;
+  background-color: blue;
+  border-radius: 60px;
+}
+
+.bgGreen{
+  background-color: $greenColor;
+}
+.bgRed{
+  background-color: $redColor;
+}
+
+
 
 //MOBILE
 @include mobile{
