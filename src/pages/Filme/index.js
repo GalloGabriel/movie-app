@@ -89,9 +89,18 @@ export default function Filme(){
 
     let filmesSalvos = JSON.parse(allRange) || [];
 
+    //Se já tiver o filme salvo com o mesmo id, precisa ignorar
+    const hasFilme = filmesSalvos.some( (filmesalvo) => filmesalvo.id === infoMovie.id );
+
+    if(hasFilme){
+      toast.error('Você já possui esse filme salvo.');
+      return;
+    }
+
 
     filmesSalvos.push(finalRange);
     localStorage.setItem('range', JSON.stringify(filmesSalvos));
+    toast.success('Filme salvo com sucesso!');
 
   }
 

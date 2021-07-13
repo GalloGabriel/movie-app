@@ -30,7 +30,7 @@ export default function Favoritos(){
 
   return(
     <div id="meus-filmes">
-      <h1>Meus Filmes</h1>
+      <h1>Filmes para assistir!</h1>
 
       {filmes.length === 0 && 
       <span className="zeroFilmes">Você ainda não possui nenhum filme salvo :(</span> }

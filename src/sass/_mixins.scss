@@ -15,7 +15,6 @@
 @mixin headerStyle {
   display: flex;
   align-items: center;
-  justify-content: space-around; //um item de cada lado;
   width: 100%;
   height: 60px;
   background-color: $colorHeader;
@@ -28,6 +27,7 @@
   text-decoration: none;
   font-size: 30px;
   color: $whiteColor;
+  margin-left: 10%;
   cursor: pointer;
   letter-spacing: 3px;
   &:hover{
@@ -35,12 +35,13 @@
   }
 }
 
-@mixin favoritoStyle {
+@mixin favoritoStyle($mLeft) {
   cursor: pointer;
   text-decoration: none;
   background-color: $whiteColor;
   border-radius: 5px;
   color: $colorHeader;
+  margin-left: $mLeft;
   padding: 5px;
   font-weight: bold;
   &:hover{

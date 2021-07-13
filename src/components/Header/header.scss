@@ -11,5 +11,19 @@ header{
 }
 
 .favoritos{
-  @include favoritoStyle;
+  @include favoritoStyle(57%);
+}
+
+.myMovies{
+  @include favoritoStyle(2%);
+}
+
+@include mobile{
+  .favoritos{
+    @include favoritoStyle(25%);
+    font-size: 12px;
+  }
+  .myMovies{
+    font-size: 16px;
+  }
 }
