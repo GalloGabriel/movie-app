@@ -23,7 +23,7 @@
 }
 
 .listaFilmes strong{
-  @include title($whiteColor, 27px, 420px, 50px);
+  @include title($whiteColor, 27px, 420px, 50px, 1px 1px 5px #000);
 }
 
 .listaFilmes img{
@@ -37,7 +37,7 @@
 // MOBILE
 @include mobile{
   .listaFilmes strong{
-    @include title($whiteColor, 17px, 25px, 30px);
+    @include title($whiteColor, 17px, 25px, 30px, 1px 1px 5px #000);
   }
 
   .listaFilmes img{

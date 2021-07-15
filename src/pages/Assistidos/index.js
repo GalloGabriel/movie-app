@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import './assistidos.scss';
+import { FcRating } from "react-icons/fc";
 
 export default function Assistidos(){
 
@@ -24,12 +25,17 @@ export default function Assistidos(){
         {filmes.map((item)=>{
           return(
             <li key={item.id}>
-              <span>{item.title}</span><br/>
-              <img src={item.imagem} alt={`imagem do filme ${item.title}`}/> <br/>
-              <span>{item.nota}</span> <br/>
-              <span>Comentário: <br/> {item.comentario}</span> <br/>
-              <span>Assistiu em: {item.streaming}</span>
-
+              <span className="titulo-assistidos">{item.title}</span><br/>
+              <img className="image-assistidos" src={item.imagem} alt={`imagem do filme ${item.title}`}/> <br/>
+              <span className="nota-assistidos">{item.nota} <br/> <FcRating /></span> 
+              <details>
+                <summary>Mais Detalhes</summary>
+                <br/>
+                <div className="comentario-assistidos">Comentário: <br/> 
+                <p>{item.comentario}</p>
+                </div> <br/>
+                <span>Assistiu em: {item.streaming}</span>
+              </details>
             </li>
           )
         })}

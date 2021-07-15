@@ -52,10 +52,10 @@
 }
 //--- HEADER STYLE ----//-------//-----//
 
-@mixin title($colorTitle, $fontSize, $leftTitle, $marginTop) {
+@mixin title($colorTitle, $fontSize, $leftTitle, $marginTop, $textShadow) {
   color: $colorTitle;
   font-size: $fontSize;
-  text-shadow: 1px 1px 5px #000;
+  text-shadow: $textShadow;
   position: absolute;
   left: $leftTitle;
   margin-top: $marginTop;
@@ -83,4 +83,16 @@
     background-color: $pinkColor;
     transition: all 0.4s;
   }
+}
+
+@mixin summaryStyle {
+  cursor: pointer; 
+  color: $whiteColor; 
+  background-image: linear-gradient(to right, $purpleColor , $pinkColor); 
+  border-color: #005662; 
+  padding: 0.8rem 0.75rem; 
+  font-size: 115%;
+  outline: none;
+  width: 61%;
+  border-radius: 5px;
 }

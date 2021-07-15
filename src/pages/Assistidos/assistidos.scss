@@ -1,3 +1,5 @@
+@import '../../sass/styles';
+
 .container{
   text-align: left;
 }
@@ -5,4 +7,30 @@
 .container h1{
   color: white;
   margin-top: 3%;
+}
+
+li{
+  margin-top: -10px;
+}
+
+.titulo-assistidos{
+  @include title($whiteColor, 26px, 34%, 150px, 1px 1px 5px #000)
+}
+
+.image-assistidos{
+  @include movieImage(65%, 3px 7px 3px $shadowColor)
+}
+
+.nota-assistidos{
+  @include title($whiteColor, 26px, 63%, -182px, 5px 5px 5px black);
+  text-align: center;
+}
+
+summary{
+  @include summaryStyle();
+  margin-top: 5px;
+}
+
+.comentario-assistidos{
+  width: 63%;
 }
