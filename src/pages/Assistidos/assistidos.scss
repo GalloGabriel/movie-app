@@ -14,7 +14,8 @@ li{
 }
 
 .titulo-assistidos{
-  @include title($whiteColor, 26px, 34%, 150px, 1px 1px 5px #000)
+  @include title($whiteColor, 26px, 34%, 150px);
+  text-shadow: 1px 1px 5px #000;
 }
 
 .image-assistidos{
@@ -22,8 +23,15 @@ li{
 }
 
 .nota-assistidos{
-  @include title($whiteColor, 26px, 63%, -182px, 5px 5px 5px black);
+  @include title($whiteColor, 26px, 63%, -182px);
   text-align: center;
+  text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc,
+                     0 1px 0 #ccc, 0 2px 0 #ccc,
+                     0 2px 0 #ccc, 0 3px 0 #ccc,
+                     0 2px 0 #ccc, 0 2px 0 #ccc,
+                     0 2px 0 #ccc, 0 2px 0 #ccc,
+                     0 2px 0 #ccc, 0 2px 0 #ccc,
+                     0 3px 7px rgba(0, 0, 0, 0.5);
 }
 
 summary{
@@ -33,4 +41,16 @@ summary{
 
 .comentario-assistidos{
   width: 63%;
+}
+
+.close-assistidos{
+  position: absolute;
+  margin: 1.5% 0 0 0.8%;
+  font-size: 24px;
+  color: $redColor;
+  font-weight: bold;
+  cursor: pointer;
+}
+.close-assistidos:hover{
+  color: $pinkColor;
 }

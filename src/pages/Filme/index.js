@@ -187,7 +187,7 @@ export default function Filme(){
 
           <label id="label02">Seu comentário sobre o filme:</label><br/>
           <textarea id="txtArea" placeholder="Digite algo sobre o filme" 
-          cols="30" rows="8" maxLength="310" value={coment} 
+          cols="30" rows="8" wrap autoComplete="on" autoCapitalize="word" maxLength="310" value={coment} 
           onChange={(e) => setComent(e.target.value)}>
           </textarea><br/><br/>
 
@@ -200,6 +200,7 @@ export default function Filme(){
             <option>Amazon Prime Video</option>
             <option>Disney+</option>
             <option>HBO Max</option>
+            <option>Telecine Play</option>
             <option>Outros</option>
           </select><br/><br/>
 
