@@ -67,10 +67,10 @@
   box-shadow: $shadowImg;
 }
 
-@mixin buttonStyle($fontSize, $widthButton, $marginButton, $radiusButton, $paddingButton) {
+@mixin buttonStyle($fontSize, $widthButton, $colorButton, $hoverColor, $marginButton, $radiusButton, $paddingButton) {
   text-decoration: none;
   color: $whiteColor;
-  background-color: $purpleColor;
+  background-color: $colorButton;
   font-size: $fontSize;
   width: $widthButton;
   margin: $marginButton;
@@ -79,19 +79,7 @@
   box-shadow: 3px 3px 3px $shadowColor;
   padding: $paddingButton;
   &:hover{
-    background-color: $pinkColor;
+    background-color: $hoverColor;
     transition: all 0.4s;
   }
-}
-
-@mixin summaryStyle {
-  cursor: pointer; 
-  color: $whiteColor; 
-  background-image: linear-gradient(to right, $purpleColor , $pinkColor); 
-  border-color: #005662; 
-  padding: 0.8rem 0.75rem; 
-  font-size: 115%;
-  outline: none;
-  width: 61%;
-  border-radius: 5px;
 }

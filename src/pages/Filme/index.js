@@ -3,8 +3,6 @@ import { useParams, useHistory } from 'react-router-dom';
 import api from '../../services/api';
 import $ from "jquery";
 import './filme-info.scss';
-import { IconContext } from "react-icons";
-import { FaThumbsUp, FaThumbsDown } from 'react-icons/fa';
 import { FcRating } from "react-icons/fc";
 import { toast } from 'react-toastify';
 
@@ -17,11 +15,8 @@ export default function Filme(){
   const [infoMovie, setInfoMovie] = useState([]);
   const [load, setLoad] = useState(true);
   const [range, setRange] = useState('0');
-  const [coment, setComent] = useState('');
   const [streaming, setStreaming] = useState('');
 
-  let click = 0;
-  let click2 = 0;
 
   useEffect(() => {
 
@@ -81,7 +76,6 @@ export default function Filme(){
       imagem: infoMovie.foto,
       title: infoMovie.nome,
       nota: range,
-      comentario: coment,
       streaming: streaming
     }
 
@@ -120,18 +114,13 @@ export default function Filme(){
     let body = document.getElementsByClassName('app')[0];
     let range = document.getElementById('range');
     let titulo = document.getElementById('titulo');
-    let textArea = document.getElementById('txtArea');
     let label01 = document.getElementById('label01');
     let selectModal = document.getElementById('selectModal');
     let rangeNumber = document.getElementById('rangeNumber');
-    let label02 = document.getElementById('label02');
     let label03 = document.getElementById('label03');
-    let label04 = document.getElementById('label04');
-    let thumb01 = document.getElementById('thumb01');
-    let thumb02 = document.getElementById('thumb02');
 
     modal.style.display = "block";
-    $("#myModal").animate({top: "70px", opacity: "1"},1000);
+    $("#myModal").animate({top: "125px", opacity: "1"},1000);
 
     span.onclick = function(){
       modal.style.display = "none";
@@ -139,42 +128,19 @@ export default function Filme(){
     
     body.onclick = function(event){
       if(event.target === modal || event.target === range || 
-         event.target === titulo || event.target === textArea || 
-         event.target === label01 || event.target === selectModal || 
-         event.target === rangeNumber || event.target === label02 ||
-         event.target === label03 || event.target === label04 || 
-         event.target === thumb01 || event.target === thumb02){
+         event.target === titulo || event.target === label01 || 
+         event.target === selectModal || event.target === rangeNumber || 
+         event.target === label03){
             modal.style.display = "block";
       }else{
             modal.style.display = "none";
       } 
     }  
   }
-  
-  
-  
-  function addBg(){
-    let indica = document.getElementById('thumb01');
-    click++
-    if(click%2 !== 0){
-      indica.classList.add('bgGreen');
-    }else{
-      indica.classList.remove('bgGreen');
-    }
-  }
-
-  function addBg2(){
-    let naoIndica = document.getElementById('thumb02');
-    click2++
-    if(click2%2 !== 0){
-      naoIndica.classList.add('bgRed');
-    }else{
-      naoIndica.classList.remove('bgRed');
-    }
-  }
 
   return(
     <div className="filmeInfo">
+
         <div id="myModal" className="modal">
           <span className="close">&times;</span>
           <h1 id="titulo">Avalie este filme!</h1>
@@ -183,13 +149,7 @@ export default function Filme(){
           <input id="range" type="range" min="0" max="10" step="0.5" value={range}
                   onChange={(e)=> setRange(e.target.value)} /> 
           <span id="rangeNumber" className="valueRange">{range} <FcRating/></span>
-          <br/><br/>
-
-          <label id="label02">Seu comentário sobre o filme:</label><br/>
-          <textarea id="txtArea" placeholder="Digite algo sobre o filme" 
-          cols="30" rows="8" wrap autoComplete="on" autoCapitalize="word" maxLength="310" value={coment} 
-          onChange={(e) => setComent(e.target.value)}>
-          </textarea><br/><br/>
+          <br/><br/><br/>
 
           <label id="label03">Onde você assistiu esse filme?</label><br/>
           <select id="selectModal" value={streaming} 
@@ -204,18 +164,7 @@ export default function Filme(){
             <option>Outros</option>
           </select><br/><br/>
 
-          <span id="label04" className="indica">Você indica este filme?</span><br/>
-          <IconContext.Provider value={{ color: "white" }}>
-            <div onClick={addBg} id="thumb01" className="thumbs">
-            <FaThumbsUp id="thumbIn01" />
-            </div>
-            
-    
-            <div onClick={addBg2} id="thumb02" className="thumbs">
-              <FaThumbsDown id="thumbIn02" />
-            </div>
-          </IconContext.Provider>
-          <br/><br/>
+          <br/>
 
           <button className="btnModal" onClick={addFilme}>Salvar Filme</button>
           

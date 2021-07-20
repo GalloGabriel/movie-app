@@ -40,18 +40,12 @@ export default function Assistidos(){
         {filmes.map((item)=>{
           return(
             <li key={item.id}>
-              <span onClick={ () => handleDelete(item.id) } className="close-assistidos">&times;</span>
+              <span>{item.streaming}</span>
               <span className="titulo-assistidos">{item.title}</span><br/>
               <img className="image-assistidos" src={item.imagem} alt={`imagem do filme ${item.title}`}/> <br/>
               <span className="nota-assistidos">{item.nota} <br/> <FcRating /></span> 
-              <details>
-                <summary>Mais Detalhes</summary>
-                <br/>
-                <div className="comentario-assistidos">Comentário: <br/> 
-                <p>{item.comentario}</p>
-                </div> <br/>
-                <span>Assistiu em: {item.streaming}</span>
-              </details>
+              <br/>              
+              <button className="button-assistidos" onClick={ () => handleDelete(item.id) }>Remover</button>
             </li>
           )
         })}
