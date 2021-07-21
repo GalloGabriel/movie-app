@@ -39,5 +39,23 @@ li{
 }
 
 .button-assistidos{
-  @include buttonStyle(16px, 100px, $redColor, #b03a3a, -6px 20px 0px 5px, 5px, 5px );
+  @include buttonStyle(18px, 16%, $redColor, #b03a3a, -6px 20px 0px 5px, 5px, 2px );
+}
+
+.details{
+  text-decoration: none;
+  color: #fff;
+  background-color: #bd93f9;
+  font-size: 18px;
+  width: 18%;
+  text-align: center;
+  margin-top: 10px;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px #22232e;
+  padding: 2px;
+  border: 1px solid transparent;
+}
+.details:hover{
+  background-color: #ff79c6;
+  transition: all 0.4s;
 }

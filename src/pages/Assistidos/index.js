@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import './assistidos.scss';
 import { FcRating } from "react-icons/fc";
 import { toast } from 'react-toastify';
@@ -44,7 +45,8 @@ export default function Assistidos(){
               <span className="titulo-assistidos">{item.title}</span><br/>
               <img className="image-assistidos" src={item.imagem} alt={`imagem do filme ${item.title}`}/> <br/>
               <span className="nota-assistidos">{item.nota} <br/> <FcRating /></span> 
-              <br/>              
+              <br/>  
+              <Link className="details" to={`/filme/${item.id}`}>Ver Detalhes</Link>            
               <button className="button-assistidos" onClick={ () => handleDelete(item.id) }>Remover</button>
             </li>
           )
