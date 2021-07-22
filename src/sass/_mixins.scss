@@ -83,3 +83,43 @@
     transition: all 0.4s;
   }
 }
+
+// STREAMING STYLES
+@mixin netflix($streamWidth, $streamBg, $streamColor, $streamTextShadow) {
+  padding: 2px;
+  width: $streamWidth;
+  background-color: $streamBg;  
+  color: $streamColor;
+  position: relative;
+  top: -180px;
+  left: 2%;
+  border-radius: 5px;
+  text-align: center;
+  letter-spacing: 0.8px;
+  box-shadow: 2px 2px 2px $shadowColor;
+  text-shadow: $streamTextShadow;
+}
+
+@mixin telecine() {
+  @include netflix(16%, #021742, #ff1c1c, none);
+}
+
+@mixin amazon() {
+  @include netflix(25%, #00abe1, $whiteColor, 1px 1px 2px #221f1f)
+}
+
+@mixin hbo() {
+  @include netflix(12%, #663399, $whiteColor, 1px 1px 2px #221f1f)
+}
+
+@mixin disney() {
+  @include netflix(10%, #113ccf, $whiteColor, 1px 1px 2px #221f1f)
+}
+
+@mixin cinema() {
+  @include netflix(10%, $greenColor, $whiteColor, 1px 1px 2px #221f1f)
+}
+
+@mixin outros() {
+  @include netflix(9%, $whiteColor, $shadowColor, 1px 1px #221f1f)
+}

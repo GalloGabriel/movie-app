@@ -13,6 +13,19 @@ export default function Assistidos(){
     const minhaLista = localStorage.getItem('range');
     setFilmes(JSON.parse(minhaLista) || []);
 
+    /*function verificaStreaming(){
+      let meusFilmes = JSON.parse(minhaLista) || [];
+      const streaming = meusFilmes.some( (stream) => stream.streaming === 'Netflix' )
+      console.log(streaming)
+
+      if(streaming){
+        $('.streaming-style').css("color", "red");
+      }
+
+    }
+    
+    verificaStreaming();*/
+
   }, [])
 
   function handleDelete(id){
@@ -40,11 +53,32 @@ export default function Assistidos(){
       <ul>
         {filmes.map((item)=>{
           return(
-            <li key={item.id}>
-              <span>{item.streaming}</span>
+            <li key={item.id}>              
               <span className="titulo-assistidos">{item.title}</span><br/>
               <img className="image-assistidos" src={item.imagem} alt={`imagem do filme ${item.title}`}/> <br/>
               <span className="nota-assistidos">{item.nota} <br/> <FcRating /></span> 
+
+              {item.streaming === 'Netflix' && 
+              <div className="netflix">{item.streaming}</div> || 
+
+              item.streaming === 'Telecine Play' &&
+              <div className="telecine">{item.streaming}</div> ||
+
+              item.streaming === 'Amazon Prime Video' &&
+              <div className="amazon">{item.streaming}</div> ||
+              
+              item.streaming === 'HBO Max' &&
+              <div className="hbo">{item.streaming}</div> || 
+              
+              item.streaming === 'Disney+' &&
+              <div className="disney">{item.streaming}</div> ||
+              
+              item.streaming === 'Cinema' &&
+              <div className="cinema">{item.streaming}</div> ||
+              
+              item.streaming === 'Outros' &&
+              <div className="outros">{item.streaming}</div>}
+
               <br/>  
               <Link className="details" to={`/filme/${item.id}`}>Ver Detalhes</Link>            
               <button className="button-assistidos" onClick={ () => handleDelete(item.id) }>Remover</button>
