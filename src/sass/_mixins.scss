@@ -116,6 +116,10 @@
   @include netflix(10%, #113ccf, $whiteColor, 1px 1px 2px #221f1f)
 }
 
+@mixin globoplay {
+  @include netflix(13%, #121010, #ff3333, none);
+}
+
 @mixin cinema() {
   @include netflix(10%, $greenColor, $whiteColor, 1px 1px 2px #221f1f)
 }

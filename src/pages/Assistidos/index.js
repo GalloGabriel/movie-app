@@ -13,19 +13,6 @@ export default function Assistidos(){
     const minhaLista = localStorage.getItem('range');
     setFilmes(JSON.parse(minhaLista) || []);
 
-    /*function verificaStreaming(){
-      let meusFilmes = JSON.parse(minhaLista) || [];
-      const streaming = meusFilmes.some( (stream) => stream.streaming === 'Netflix' )
-      console.log(streaming)
-
-      if(streaming){
-        $('.streaming-style').css("color", "red");
-      }
-
-    }
-    
-    verificaStreaming();*/
-
   }, [])
 
   function handleDelete(id){
@@ -75,13 +62,19 @@ export default function Assistidos(){
               
               item.streaming === 'Cinema' &&
               <div className="cinema">{item.streaming}</div> ||
+
+              item.streaming === 'Globoplay' &&
+              <div className="globoplay">globoplay</div> ||
               
               item.streaming === 'Outros' &&
               <div className="outros">{item.streaming}</div>}
 
               <br/>  
+              <div style={{marginTop: '-25px'}}>
               <Link className="details" to={`/filme/${item.id}`}>Ver Detalhes</Link>            
               <button className="button-assistidos" onClick={ () => handleDelete(item.id) }>Remover</button>
+              </div>
+  
             </li>
           )
         })}

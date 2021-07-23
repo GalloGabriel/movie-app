@@ -160,6 +160,7 @@ export default function Filme(){
             <option>Amazon Prime Video</option>
             <option>Disney+</option>
             <option>HBO Max</option>
+            <option>Globoplay</option>
             <option>Telecine Play</option>
             <option>Outros</option>
           </select><br/><br/>
