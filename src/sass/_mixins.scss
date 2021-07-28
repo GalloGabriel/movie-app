@@ -127,3 +127,7 @@
 @mixin outros() {
   @include netflix(9%, $whiteColor, $shadowColor, 1px 1px #221f1f)
 }
+
+@mixin vazio() {
+  @include netflix(9%, transparent, transparent, none)
+}

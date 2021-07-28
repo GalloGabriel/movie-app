@@ -98,7 +98,6 @@ export default function Filme(){
 
   }
 
-
   
   if(load){
     return(
