@@ -18,6 +18,20 @@ export default function Assistidos(){
 
   }, [])
 
+  function editaFilme(id){
+    
+    let ranges = JSON.parse(localStorage.range);
+    for(var i = 0; i < ranges.length; i++){
+      if(id === ranges[i].id){
+        ranges[i].nota = range;
+        ranges[i].streaming = streaming;
+        break;
+      }
+    }
+    localStorage.setItem('range', JSON.stringify(ranges));
+    document.location.reload();
+  }
+
   function handleDelete(id){
 
     //filtrando nosso array e retornando todos os itens menos o clicado
@@ -31,6 +45,7 @@ export default function Assistidos(){
     toast.success('Filme excluído com sucesso!');
 
   }
+
 
   function toggleModal(){
     let modal = document.getElementById('myModal');
@@ -108,7 +123,7 @@ export default function Assistidos(){
               <br/>  
               <div style={{marginTop: '-25px'}}>
               <Link className="details" to={`/filme/${item.id}`}>Ver Detalhes</Link>  
-              <button id="toggleModal" onClick={ toggleModal }>Editar</button>          
+              <button className="edit-button" id="toggleModal" onClick={ toggleModal }>Editar</button>          
               <button className="button-assistidos" onClick={ () => handleDelete(item.id) }>Remover</button>
               </div>
 
@@ -138,7 +153,7 @@ export default function Assistidos(){
 
                 <br/>
 
-          <button className="btnModal" onClick={()=>alert('CLICOU')}>Salvar Filme</button>
+          <button className="btnModal" onClick={() => editaFilme(item.id) }>Salvar Filme</button>
           
         </div>
   

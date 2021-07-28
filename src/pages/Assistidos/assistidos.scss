@@ -94,8 +94,19 @@ li{
   width: 550px;
   height: 320px;
   background-color: $backgroundColor;
-  margin-left: 80px;
+  margin-left: 5px;
+  position: fixed;
+  margin-top: -2%;
   border-radius: 10px;
   box-shadow: -2px 1px 15px 10px #1a1b24;
   z-index: 10;
+}
+
+.edit-button{
+  background-color: $greenColor !important;
+  outline: none;
+  margin-right: 0.7% !important;
+}
+.edit-button:hover{
+  background-color: #124a36 !important;
 }
