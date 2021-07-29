@@ -90,13 +90,13 @@ li{
 }
 
 .modal-assistidos{
-  display: none;
+  display: block !important;
   width: 550px;
   height: 320px;
   background-color: $backgroundColor;
   margin-left: 5px;
-  position: fixed;
-  margin-top: -2%;
+  //position: fixed;
+  //margin-top: -2%;
   border-radius: 10px;
   box-shadow: -2px 1px 15px 10px #1a1b24;
   z-index: 10;
