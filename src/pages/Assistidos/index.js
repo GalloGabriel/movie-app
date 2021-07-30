@@ -14,7 +14,8 @@ export default function Assistidos(){
   useEffect( () => {
 
     const minhaLista = localStorage.getItem('range');
-    setFilmes(JSON.parse(minhaLista) || []);
+    let minhaListaJson = JSON.parse(minhaLista);    
+    setFilmes((minhaListaJson) || []);
 
   }, [])
 
@@ -48,34 +49,12 @@ export default function Assistidos(){
   }
 
   
-  function toggleModal(){
-    let modal = document.getElementById('myModal-1');
-    let span = document.getElementsByClassName('close')[0];
-    let body = document.getElementsByClassName('app')[0];
-    let range = document.getElementById('range');
-    let titulo = document.getElementById('titulo');
-    let label01 = document.getElementById('label01');
-    let selectModal = document.getElementById('selectModal');
-    let rangeNumber = document.getElementById('rangeNumber');
-    let label03 = document.getElementById('label03');
-
-    modal.style.display = "block";
-    $("#myModal-1").animate({top: "30%", opacity: "1"},1000);
-
-    span.onclick = function(){
-      modal.style.display = "none";
-    }
+  function toggleModal(index){    
     
-    body.onclick = function(event){
-      if(event.target === modal || event.target === range || 
-         event.target === titulo || event.target === label01 || 
-         event.target === selectModal || event.target === rangeNumber || 
-         event.target === label03){
-            modal.style.display = "block";
-      }else{
-            modal.style.display = "none";
-      } 
-    }  
+    setFilmes([
+      ...filmes,
+      filmes[index].editing = true
+    ])
   }
 
 
@@ -124,12 +103,12 @@ export default function Assistidos(){
               <br/>  
               <div style={{marginTop: '-25px'}}>
               <Link className="details" to={`/filme/${item.id}`}>Ver Detalhes</Link>  
-              <button className="edit-button" id="toggleModal" onClick={() => toggleModal }>Editar</button>          
+              <button className="edit-button" id="toggleModal" onClick={() => toggleModal(index) }>Editar</button>          
               <button className="button-assistidos" onClick={ () => handleDelete(item.id) }>Remover</button>
               </div>
 
-
-              <div id={`myModal-${index+1}`} className="modal-assistidos">
+              { item.editing ?
+                <div id="myModal" className="modal-assistidos">
                 {item.id}
                 <span className="close">&times;</span>
                 <h1 id="titulo">Edite sua avaliação</h1>
@@ -159,6 +138,10 @@ export default function Assistidos(){
                 <button className="btnModal" onClick={() => editaFilme(item.id) }>Salvar Filme</button>
           
               </div>
+               :
+               null
+              }
+              
   
             </li>
           )

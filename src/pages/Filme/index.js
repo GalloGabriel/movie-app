@@ -76,7 +76,8 @@ export default function Filme(){
       imagem: infoMovie.foto,
       title: infoMovie.nome,
       nota: range,
-      streaming: streaming
+      streaming: streaming,
+      editing: false
     }
 
     const allRange = localStorage.getItem('range');
