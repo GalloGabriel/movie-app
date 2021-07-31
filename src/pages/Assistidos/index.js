@@ -26,6 +26,7 @@ export default function Assistidos(){
       if(id === ranges[i].id){
         ranges[i].nota = range;
         ranges[i].streaming = streaming;
+        ranges[i].editing = false;
         break;
       }
     }
@@ -48,17 +49,29 @@ export default function Assistidos(){
 
   }
 
-  function toggleModal(index){      
+  function toggleModal(id){      
 
-    setFilmes([
-      ...filmes,
-      filmes[index].editing = true
-    ]) 
+    let ranges = JSON.parse(localStorage.range);
+    for(var i = 0; i < ranges.length; i++){
+      if(id === ranges[i].id){
+        ranges[i].editing = true;
+        break;
+      }
+    }
+    localStorage.setItem('range', JSON.stringify(ranges));
+    document.location.reload();
     
   }
 
-  function closeModal(index){
-    $('#myModal').hide();
+  function closeModal(id){
+    let ranges = JSON.parse(localStorage.range);
+    for(var i = 0; i < ranges.length; i++){
+      if(id === ranges[i].id){
+        ranges[i].editing = false;
+        break;
+      }
+    }
+    localStorage.setItem('range', JSON.stringify(ranges));
     document.location.reload();
   }
   
@@ -109,13 +122,13 @@ export default function Assistidos(){
               <br/>  
               <div style={{marginTop: '-25px'}}>
               <Link className="details" to={`/filme/${item.id}`}>Ver Detalhes</Link>  
-              <button className="edit-button" id="toggleModal" onClick={() => toggleModal(index) }>Editar</button>          
+              <button className="edit-button" id="toggleModal" onClick={() => toggleModal(item.id) }>Editar</button>          
               <button className="button-assistidos" onClick={ () => handleDelete(item.id) }>Remover</button>
               </div>
 
               { item.editing ?
                 <div id="myModal" className="modal-assistidos">
-                <span onClick={()=>closeModal(index)} className="close">&times;</span>
+                <span onClick={()=>closeModal(item.id)} className="close">&times;</span>
                 <h1 id="titulo">Edite sua avaliação</h1>
 
                 <label id="label01">Nota do Filme:</label><br/>

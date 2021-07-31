@@ -103,10 +103,11 @@ export default function Filme(){
   if(load){
     return(
       <div className="filmeInfo">
-        <h1>Carregando filme...</h1>
+        <h1 id="buffer">Carregando filme...</h1>
     </div>
     );
-  }
+  }  
+  
 
   function toggleModal(){
     let modal = document.getElementById('myModal');
