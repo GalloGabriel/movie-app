@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './assistidos.scss';
-import $ from "jquery";
 import { FcRating } from "react-icons/fc";
 import { toast } from 'react-toastify';
 
@@ -85,12 +84,13 @@ export default function Assistidos(){
       <span className="zeroFilmes">Você ainda não possui nenhum filme salvo :(</span> }
 
       <ul>
-        {filmes.map((item, index)=>{
+        {filmes.map((item)=>{
           return(
-            <li key={item.id}>              
+            <li key={item.id}> 
+              
               <span className="titulo-assistidos">{item.title}</span><br/>
               <img className="image-assistidos" src={item.imagem} alt={`imagem do filme ${item.title}`}/> <br/>
-              <span className="nota-assistidos">{item.nota} <br/> <FcRating /></span> 
+              <span className="nota-assistidos">{item.nota} <br/> <FcRating /></span>     
 
               {item.streaming === 'Netflix' && 
               <div className="netflix">{item.streaming}</div>}  
@@ -120,7 +120,7 @@ export default function Assistidos(){
               <div className="vazio"></div>}
 
               <br/>  
-              <div style={{marginTop: '-25px'}}>
+              <div className="botoes-assistidos">
               <Link className="details" to={`/filme/${item.id}`}>Ver Detalhes</Link>  
               <button className="edit-button" id="toggleModal" onClick={() => toggleModal(item.id) }>Editar</button>          
               <button className="button-assistidos" onClick={ () => handleDelete(item.id) }>Remover</button>

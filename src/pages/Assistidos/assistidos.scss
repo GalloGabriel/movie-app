@@ -42,6 +42,10 @@ li{
   @include buttonStyle(18px, 16%, $redColor, #b03a3a, -6px 20px 0px 5px, 5px, 2px );
 }
 
+.botoes-assistidos{
+  margin-top: -5%;
+}
+
 .details{
   text-decoration: none;
   color: #fff;
@@ -109,4 +113,98 @@ li{
 }
 .edit-button:hover{
   background-color: #1d6e50 !important;
+}
+
+@include mobile{
+  .image-assistidos{
+    @include movieImage(120%, 3px 7px 3px $shadowColor);
+    margin-left: -28%;
+  }
+  .titulo-assistidos{
+    @include title(#f8f8f2, 18px, 0, 32%);
+    text-shadow: 1px 1px 5px #000;
+    margin-left: 10%;
+  }
+
+  .nota-assistidos{
+    @include title($whiteColor, 18px, 82%, -115px);
+  }
+
+  .botoes-assistidos{
+    margin-top: -15%;
+  }
+
+  .details{
+    @include buttonStyle(14px, 10%, $purpleColor, $pinkColor, -6px 0px 0px -55px, 5px, 2px);
+  }
+
+  .button-assistidos{
+    @include buttonStyle(14px, 30%, $redColor, #b03a3a, -6px 20px 0px 5px, 5px, 2px );
+  }
+
+  .modal-assistidos{
+    width: 300px;
+    height: 270px;
+    margin-left: -75px;
+  }
+  .modal-assistidos h1{
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .netflix{
+    @include netflix(21%, #bb1d24, #f5f5f1, 1px 1px 2px #221f1f);
+    top: -113px !important;
+    left: -23% !important;
+    font-size: 12px;
+  }
+
+  .telecine{
+    @include netflix(40%, #021742, #ff1c1c, none);
+    top: -113px !important;
+    left: -23% !important;
+    font-size: 12px;
+  }
+  .amazon{
+    @include netflix(57%, #00abe1, $whiteColor, 1px 1px 2px #221f1f);
+    top: -113px !important;
+    left: -23% !important;
+    font-size: 12px;
+  }
+  .hbo{
+    @include netflix(27%, #663399, $whiteColor, 1px 1px 2px #221f1f);
+    top: -113px !important;
+    left: -23% !important;
+    font-size: 12px;
+  }
+  .disney{
+    @include netflix(25%, #113ccf, $whiteColor, 1px 1px 2px #221f1f);
+    top: -113px !important;
+    left: -23% !important;
+    font-size: 12px;
+  }
+  .cinema{
+    @include netflix(25%, $greenColor, $whiteColor, 1px 1px 2px #221f1f);
+    top: -113px !important;
+    left: -23% !important;
+    font-size: 12px;
+  }
+  .outros{
+    @include netflix(20%, $whiteColor, $shadowColor, 1px 1px #221f1f);
+    top: -113px !important;
+    left: -23% !important;
+    font-size: 12px;
+  }
+  .globoplay{
+    @include netflix(30%, #121010, #ff3333, none);
+    top: -113px !important;
+    left: -23% !important;
+    font-size: 12px;
+  }
+  .vazio{
+    @include netflix(9%, transparent, transparent, none);
+    box-shadow: none !important;
+    top: -113px !important;
+    left: -23% !important;
+  }
 }
