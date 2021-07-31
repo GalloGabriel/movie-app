@@ -48,14 +48,20 @@ export default function Assistidos(){
 
   }
 
-  
-  function toggleModal(index){    
-    
+  function toggleModal(index){      
+
     setFilmes([
       ...filmes,
       filmes[index].editing = true
-    ])
+    ]) 
+    
   }
+
+  function closeModal(index){
+    $('#myModal').hide();
+    document.location.reload();
+  }
+  
 
 
   return(
@@ -109,8 +115,7 @@ export default function Assistidos(){
 
               { item.editing ?
                 <div id="myModal" className="modal-assistidos">
-                {item.id}
-                <span className="close">&times;</span>
+                <span onClick={()=>closeModal(index)} className="close">&times;</span>
                 <h1 id="titulo">Edite sua avaliação</h1>
 
                 <label id="label01">Nota do Filme:</label><br/>

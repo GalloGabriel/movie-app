@@ -90,16 +90,16 @@ li{
 }
 
 .modal-assistidos{
-  display: block !important;
+  display: block ;
   width: 550px;
   height: 320px;
   background-color: $backgroundColor;
   margin-left: 5px;
-  //position: fixed;
-  //margin-top: -2%;
+  position: relative;
+  margin-top: -35%;
   border-radius: 10px;
   box-shadow: -2px 1px 15px 10px #1a1b24;
-  z-index: 10;
+  z-index: 1000;
 }
 
 .edit-button{
@@ -108,5 +108,5 @@ li{
   margin-right: 0.7% !important;
 }
 .edit-button:hover{
-  background-color: #124a36 !important;
+  background-color: #1d6e50 !important;
 }
