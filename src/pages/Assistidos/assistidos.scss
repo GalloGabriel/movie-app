@@ -34,10 +34,6 @@ li{
                      0 3px 7px rgba(0, 0, 0, 0.5);
 }
 
-.comentario-assistidos{
-  width: 63%;
-}
-
 .button-assistidos{
   @include buttonStyle(18px, 16%, $redColor, #b03a3a, -6px 20px 0px 5px, 5px, 2px );
 }
@@ -65,31 +61,31 @@ li{
 }
 
 .netflix{
-  @include netflix(9%, #bb1d24, #f5f5f1, 1px 1px 2px #221f1f);
+  @include streaming(9%, #bb1d24, #f5f5f1, 1px 1px 2px #221f1f);
 }
 .telecine{
-  @include telecine();
+  @include streaming(16%, #021742, #ff1c1c, none);
 }
 .amazon{
-  @include amazon();
+  @include streaming(25%, #00abe1, $whiteColor, 1px 1px 2px #221f1f);
 }
 .hbo{
-  @include hbo();
+  @include streaming(12%, #663399, $whiteColor, 1px 1px 2px #221f1f);
 }
 .disney{
-  @include disney();
+  @include streaming(10%, #113ccf, $whiteColor, 1px 1px 2px #221f1f);
 }
 .cinema{
-  @include cinema();
+  @include streaming(10%, $greenColor, $whiteColor, 1px 1px 2px #221f1f);
 }
 .outros{
-  @include outros();
+  @include streaming(9%, $whiteColor, $shadowColor, 1px 1px #221f1f);
 }
 .globoplay{
-  @include globoplay();
+  @include streaming(13%, #121010, #ff3333, none);
 }
 .vazio{
-  @include vazio();
+  @include streaming(9%, transparent, transparent, none);
   box-shadow: none !important;
 }
 
@@ -153,56 +149,56 @@ li{
   }
 
   .netflix{
-    @include netflix(21%, #bb1d24, #f5f5f1, 1px 1px 2px #221f1f);
+    @include streaming(21%, #bb1d24, #f5f5f1, 1px 1px 2px #221f1f);
     top: -113px !important;
     left: -23% !important;
     font-size: 12px;
   }
 
   .telecine{
-    @include netflix(40%, #021742, #ff1c1c, none);
+    @include streaming(40%, #021742, #ff1c1c, none);
     top: -113px !important;
     left: -23% !important;
     font-size: 12px;
   }
   .amazon{
-    @include netflix(57%, #00abe1, $whiteColor, 1px 1px 2px #221f1f);
+    @include streaming(57%, #00abe1, $whiteColor, 1px 1px 2px #221f1f);
     top: -113px !important;
     left: -23% !important;
     font-size: 12px;
   }
   .hbo{
-    @include netflix(27%, #663399, $whiteColor, 1px 1px 2px #221f1f);
+    @include streaming(27%, #663399, $whiteColor, 1px 1px 2px #221f1f);
     top: -113px !important;
     left: -23% !important;
     font-size: 12px;
   }
   .disney{
-    @include netflix(25%, #113ccf, $whiteColor, 1px 1px 2px #221f1f);
+    @include streaming(25%, #113ccf, $whiteColor, 1px 1px 2px #221f1f);
     top: -113px !important;
     left: -23% !important;
     font-size: 12px;
   }
   .cinema{
-    @include netflix(25%, $greenColor, $whiteColor, 1px 1px 2px #221f1f);
+    @include streaming(25%, $greenColor, $whiteColor, 1px 1px 2px #221f1f);
     top: -113px !important;
     left: -23% !important;
     font-size: 12px;
   }
   .outros{
-    @include netflix(20%, $whiteColor, $shadowColor, 1px 1px #221f1f);
+    @include streaming(20%, $whiteColor, $shadowColor, 1px 1px #221f1f);
     top: -113px !important;
     left: -23% !important;
     font-size: 12px;
   }
   .globoplay{
-    @include netflix(30%, #121010, #ff3333, none);
+    @include streaming(30%, #121010, #ff3333, none);
     top: -113px !important;
     left: -23% !important;
     font-size: 12px;
   }
   .vazio{
-    @include netflix(9%, transparent, transparent, none);
+    @include streaming(9%, transparent, transparent, none);
     box-shadow: none !important;
     top: -113px !important;
     left: -23% !important;
